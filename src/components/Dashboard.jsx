@@ -1,9 +1,8 @@
 import React from "react";
-import TopBar from "./TopBar";
+import TopBar from "./topbar"; // ✅ Fixed case-sensitive import
 import Sidebar from "./Sidebar";
 import KPISection from "./KPISection";
 import CentralAnalytics from "./CentralAnalytics";
-
 
 const Dashboard = () => {
   return (
@@ -17,8 +16,8 @@ const Dashboard = () => {
         <TopBar />
 
         {/* KPI Cards Section */}
-        <KPISection /><CentralAnalytics />
-
+        <KPISection />
+        <CentralAnalytics />
 
         {/* Main Dashboard Placeholder */}
         <div className="p-8 text-gray-700">
