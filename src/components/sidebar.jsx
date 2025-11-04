@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function sidebar() {
+export default function Sidebar() {
   const menuItems = [
     "Dashboard",
     "Email Lists",

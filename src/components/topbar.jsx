@@ -1,27 +1,28 @@
 import React from "react";
 
-export default function topBar() {
+const TopBar = () => {
   return (
-    <div className="flex justify-between items-center bg-white shadow-sm px-6 py-4 border-b">
-      {/* Left */}
-      <div className="font-semibold text-lg text-gray-700">
+    <div className="w-full bg-white shadow-md flex items-center justify-between px-8 py-4">
+      {/* Left: Dashboard Title */}
+      <div className="text-lg font-semibold text-gray-800">
         Dashboard Overview
       </div>
 
-      {/* Center */}
-      <div className="text-gray-500 text-sm">
-        Welcome back, <span className="font-medium text-gray-700">Srinath</span>
+      {/* Center: Welcome Message */}
+      <div className="text-gray-600 text-md">
+        Welcome back, <span className="font-medium text-gray-800">Srinath</span>
       </div>
 
-      {/* Right */}
-      <div className="flex items-center gap-2 text-sm text-gray-500">
-        <span className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-        </span>
-        <span className="text-gray-600">All systems operational</span>
-        <span className="text-green-600 font-medium">+414 options operational</span>
+      {/* Right: System Status */}
+      <div className="flex items-center space-x-3">
+        <div className="flex items-center">
+          <span className="h-2 w-2 rounded-full bg-green-500 mr-2"></span>
+          <span className="text-sm text-gray-700">All systems operational</span>
+        </div>
+        <div className="text-sm text-gray-500">+4 | 14 options operational</div>
       </div>
     </div>
   );
-}
+};
+
+export default TopBar;
