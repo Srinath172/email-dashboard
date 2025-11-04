@@ -3,6 +3,7 @@ import TopBar from "./TopBar";
 import Sidebar from "./Sidebar";
 import KPISection from "./KPISection";
 import CentralAnalytics from "./CentralAnalytics";
+
 const Dashboard = () => {
   return (
     <div className="flex bg-gray-100 min-h-screen">
