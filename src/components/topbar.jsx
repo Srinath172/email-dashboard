@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TopBar() {
+export default function topBar() {
   return (
     <div className="flex justify-between items-center bg-white shadow-sm px-6 py-4 border-b">
       {/* Left */}
