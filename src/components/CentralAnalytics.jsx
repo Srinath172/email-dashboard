@@ -1,70 +1,163 @@
 import React from "react";
 
 const CentralAnalytics = () => {
-  const campaigns = [
-    { status: "Sent", recipients: "2,340", performance: "92%", revenue: "$1,240", date: "Oct 28, 2025", actions: "View" },
-    { status: "Scheduled", recipients: "1,870", performance: "—", revenue: "$0", date: "Nov 05, 2025", actions: "Edit" },
-    { status: "Draft", recipients: "980", performance: "—", revenue: "$0", date: "Nov 10, 2025", actions: "Continue" },
-    { status: "Active", recipients: "3,210", performance: "76%", revenue: "$890", date: "Nov 02, 2025", actions: "Track" },
-  ];
-
   return (
-    <div className="p-8">
-      {/* Section Header */}
-      <div className="bg-white p-6 rounded-2xl shadow-md">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-800">Campaigns</h2>
-          <input
-            type="text"
-            placeholder="Search campaigns..."
-            className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-          />
+    <div className="px-6 py-6 bg-gray-100">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Left column (spans 2 cols on large screens) */}
+        <div className="lg:col-span-2 space-y-6">
+          {/* Campaign Performance */}
+          <div className="bg-white rounded-2xl shadow-md p-6">
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800">Campaign Performance</h3>
+                <p className="text-sm text-gray-500 mt-1">Success metrics breakdown</p>
+              </div>
+              <div className="text-sm text-gray-500">Overall success</div>
+            </div>
+
+            {/* Visual success rate indicator (simple bar) */}
+            <div className="mt-5">
+              <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                <div className="h-3 rounded-full" style={{ width: "72%", background: "linear-gradient(90deg,#3b82f6,#93c5fd)" }} />
+              </div>
+              <div className="flex justify-between text-xs text-gray-500 mt-2">
+                <span>0%</span>
+                <span>72% Success</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            {/* Recent activities */}
+            <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <li>• New campaign “Winter Sale” launched successfully</li>
+              <li>• 124 new subscribers joined this week</li>
+              <li>• 6 campaigns improved click-through rate</li>
+            </ul>
+          </div>
+
+          {/* Engagement Trends */}
+          <div className="bg-white rounded-2xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-gray-800">Engagement Trends</h3>
+            <p className="text-sm text-gray-500 mt-1">User interaction metrics</p>
+
+            <div className="mt-4 grid grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <div className="font-medium">Email Opens</div>
+                <div className="text-gray-600 mt-1">82%</div>
+              </div>
+              <div>
+                <div className="font-medium">Link Clicks</div>
+                <div className="text-gray-600 mt-1">64%</div>
+              </div>
+              <div>
+                <div className="font-medium">Forwards</div>
+                <div className="text-gray-600 mt-1">12%</div>
+              </div>
+              <div>
+                <div className="font-medium">Unsubscribes</div>
+                <div className="text-gray-600 mt-1">3%</div>
+              </div>
+            </div>
+
+            <div className="mt-4 border-t pt-4 flex items-center justify-between">
+              <div className="text-sm text-gray-700">Overall performance rating</div>
+              <div className="text-sm font-semibold text-green-600">A+</div>
+            </div>
+          </div>
         </div>
 
-        {/* Campaigns Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-gray-100 text-gray-700">
-                <th className="py-3 px-4 text-sm font-medium">Status</th>
-                <th className="py-3 px-4 text-sm font-medium">Recipients</th>
-                <th className="py-3 px-4 text-sm font-medium">Performance</th>
-                <th className="py-3 px-4 text-sm font-medium">Revenue</th>
-                <th className="py-3 px-4 text-sm font-medium">Date</th>
-                <th className="py-3 px-4 text-sm font-medium">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {campaigns.map((item, index) => (
-                <tr
-                  key={index}
-                  className="border-b hover:bg-gray-50 transition-colors"
-                >
-                  <td className="py-3 px-4 text-gray-800">{item.status}</td>
-                  <td className="py-3 px-4 text-gray-600">{item.recipients}</td>
-                  <td className="py-3 px-4 text-gray-600">{item.performance}</td>
-                  <td className="py-3 px-4 text-gray-600">{item.revenue}</td>
-                  <td className="py-3 px-4 text-gray-600">{item.date}</td>
-                  <td className="py-3 px-4">
-                    <button className="text-blue-600 hover:underline text-sm">
-                      {item.actions}
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {/* Right column */}
+        <div className="space-y-6">
+          {/* Quick Actions */}
+          <div className="bg-white rounded-2xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-gray-800">Quick Actions</h3>
+            <p className="text-sm text-gray-500 mt-1">Jump into your most common tasks</p>
 
-        {/* Pagination */}
-        <div className="flex justify-end mt-4 space-x-2 text-sm text-gray-600">
-          <button className="px-3 py-1 rounded-md hover:bg-gray-100">Previous</button>
-          <button className="px-3 py-1 bg-blue-500 text-white rounded-md">1</button>
-          <button className="px-3 py-1 hover:bg-gray-100">2</button>
-          <button className="px-3 py-1 hover:bg-gray-100">3</button>
-          <span className="px-2">…</span>
-          <button className="px-3 py-1 hover:bg-gray-100">10</button>
-          <button className="px-3 py-1 rounded-md hover:bg-gray-100">Next</button>
+            <div className="mt-4 grid grid-cols-1 gap-3">
+              <div className="border rounded-lg p-4 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 rounded-md bg-yellow-50 text-yellow-600">⚡</div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-800">Create Campaign</div>
+                    <div className="text-xs text-gray-500">Start a new email campaign</div>
+                  </div>
+                </div>
+                <button className="text-sm text-blue-600">Get started →</button>
+              </div>
+
+              <div className="border rounded-lg p-4 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 rounded-md bg-yellow-50 text-yellow-600">⚡</div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-800">Browse Templates</div>
+                    <div className="text-xs text-gray-500">Use a pre-built design</div>
+                  </div>
+                </div>
+                <button className="text-sm text-blue-600">Get started →</button>
+              </div>
+
+              <div className="border rounded-lg p-4 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 rounded-md bg-yellow-50 text-yellow-600">⚡</div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-800">View Analytics</div>
+                    <div className="text-xs text-gray-500">Deep dive into results</div>
+                  </div>
+                </div>
+                <button className="text-sm text-blue-600">Get started →</button>
+              </div>
+
+              <div className="border rounded-lg p-4 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 rounded-md bg-yellow-50 text-yellow-600">⚡</div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-800">Segment Lists</div>
+                    <div className="text-xs text-gray-500">Create target segments</div>
+                  </div>
+                </div>
+                <button className="text-sm text-blue-600">Get started →</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Recent Campaigns */}
+          <div className="bg-white rounded-2xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-gray-800">Recent Campaigns</h3>
+            <p className="text-sm text-gray-500 mt-1">Monitor your campaign performance</p>
+
+            <ul className="mt-4 space-y-3 text-sm text-gray-700">
+              <li>
+                <div className="flex justify-between">
+                  <div>
+                    <div className="font-medium">Summer Sale</div>
+                    <div className="text-xs text-gray-500">Completed • 92% open rate</div>
+                  </div>
+                  <div className="text-sm text-gray-600">View</div>
+                </div>
+              </li>
+
+              <li>
+                <div className="flex justify-between">
+                  <div>
+                    <div className="font-medium">Weekly Digest</div>
+                    <div className="text-xs text-gray-500">Scheduled • Nov 05, 2025</div>
+                  </div>
+                  <div className="text-sm text-gray-600">Edit</div>
+                </div>
+              </li>
+
+              <li>
+                <div className="flex justify-between">
+                  <div>
+                    <div className="font-medium">Automation Test</div>
+                    <div className="text-xs text-gray-500">Draft • 980 recipients</div>
+                  </div>
+                  <div className="text-sm text-gray-600">Continue</div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
